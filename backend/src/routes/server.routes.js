@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-/GASTOS/
+/*GASTOS*/
 const gasto = require('../controllers/gastos.controllers.js');
 
-router.get('/misitio/gastos', gasto.getGastos);
-router.get('/misitio/gastos/:id', gasto.getGasto);
+router.get('/misitio/gastos', gasto.getGasto);
+router.get('/misitio/gastos/:id', gasto.getGastos);
 router.post('/misitio/gastos', gasto.addGasto);
-router.put('/misitio/gastos/:id', gasto.editGasto);
-router.delete('/misitio/gastos/:id', gasto.deleteGasto);
 
-/USUARIOS/
+/*USUARIOS*/
 const user = require('../controllers/usuarios.controllers.js');
 
 router.get('/misitio/usuarios', user.getUsuarios);
@@ -76,5 +74,7 @@ router.delete('/misitio/gastos', (req, res) => {
 router.use((req, res) => {
     res.status(404).send('<h1>404 - Página no encontrada</h1>');
 } );
+
+//router.use(express.text());
 
 module.exports = router;
