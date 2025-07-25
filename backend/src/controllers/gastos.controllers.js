@@ -47,4 +47,11 @@ gastosController.createGastos= async(req,res)=>{
     res.json('status: Gasto guardado'); 
 } 
 
+//Metodo DELETE
+gastosController.deleteGasto=async(req,res)=>{
+    const {id}=req.params; 
+    await Gasto.findByIdAndDelete(id); 
+    res.json('status: Gasto eliminado'); 
+}
+
 module.exports = gastosController;
