@@ -20,7 +20,7 @@ function logger(req,res,next){
 }
 
 //routes
-app.use(require('./src/routes/server.routes'));
+app.use(require('./src/routes/server.routes.js'));
 
 
 
